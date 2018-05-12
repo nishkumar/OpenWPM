@@ -3,10 +3,8 @@ from automation import TaskManager, CommandSequence
 from six.moves import range
 
 # The list of sites that we wish to crawl
-NUM_BROWSERS = 3
-sites = ['http://www.example.com',
-         'http://www.princeton.edu',
-         'http://citp.princeton.edu/']
+NUM_BROWSERS = 1
+sites = ['https://www.techcrunch.com',]
 
 # Loads the manager preference and 3 copies of the default browser dictionaries
 manager_params, browser_params = TaskManager.load_default_params(NUM_BROWSERS)
@@ -17,6 +15,8 @@ for i in range(NUM_BROWSERS):
     browser_params[i]['http_instrument'] = True
     # Enable flash for all three browsers
     browser_params[i]['disable_flash'] = False
+    #Save all content from Responses
+    browser_params[i]['save_all_content'] = True
 browser_params[0]['headless'] = True  # Launch only browser 0 headless
 
 # Update TaskManager configuration (use this for crawl-wide settings)
@@ -33,9 +33,11 @@ for site in sites:
 
     # Start by visiting the page
     command_sequence.get(sleep=0, timeout=60)
-
+    command_sequence.dump_page_source()
     # dump_profile_cookies/dump_flash_cookies closes the current tab.
     command_sequence.dump_profile_cookies(120)
+
+
 
     # index='**' synchronizes visits between the three browsers
     manager.execute_command_sequence(command_sequence, index='**')
