@@ -4,7 +4,7 @@ from six.moves import range
 
 # The list of sites that we wish to crawl
 NUM_BROWSERS = 1
-sites = ['https://www.yahoo.com',]
+sites = ['https://www.yahoo.com','http://www.rediff.com','https://www.dictionary.com','https://www.forbes.com','https://www.techcrunch.com']
 
 # Loads the manager preference and 3 copies of the default browser dictionaries
 manager_params, browser_params = TaskManager.load_default_params(NUM_BROWSERS)
@@ -20,7 +20,7 @@ for i in range(NUM_BROWSERS):
 browser_params[0]['headless'] = True  # Launch only browser 0 headless
 
 # Update TaskManager configuration (use this for crawl-wide settings)
-manager_params['data_directory'] = '~/Desktop/'
+manager_params['data_directory'] = '~/Desktop/OpenWPM'
 manager_params['log_directory'] = '~/Desktop/'
 
 # Instantiates the measurement platform
