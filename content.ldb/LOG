@@ -1,0 +1,5 @@
+2018/05/12-16:30:38.438074 7fedbec78740 Recovering log #6
+2018/05/12-16:30:38.618510 7fedbec78740 Level-0 table #8: started
+2018/05/12-16:30:39.226136 7fedbec78740 Level-0 table #8: 22942728 bytes OK
+2018/05/12-16:30:39.235580 7fedbec78740 Delete type=0 #6
+2018/05/12-16:30:39.240057 7fedbec78740 Delete type=3 #4
