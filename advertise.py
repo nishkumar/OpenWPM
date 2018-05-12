@@ -4,7 +4,7 @@ from six.moves import range
 
 # The list of sites that we wish to crawl
 NUM_BROWSERS = 1
-sites = ['https://www.techcrunch.com',]
+sites = ['https://www.yahoo.com',]
 
 # Loads the manager preference and 3 copies of the default browser dictionaries
 manager_params, browser_params = TaskManager.load_default_params(NUM_BROWSERS)
