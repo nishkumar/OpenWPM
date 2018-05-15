@@ -1,10 +1,26 @@
 from __future__ import absolute_import
 from automation import TaskManager, CommandSequence
 from six.moves import range
+import requests
+from fake_useragent import UserAgent
+
+ua = UserAgent()
+urls_to_browse = ['https://www.allbirds.com/products/mens-wool-runners?variant=22238492551&utm_source=google&utm_medium=cpc&utm_campaign=Shopping+%2F%2F+US+%2F%2F+Non-Brand+Desktop+%28%29&utm_content=222861857964_46805152276&utm_term=_pla-375613546025&gclid=EAIaIQobChMI9vTh2KGI2wIV01mGCh0X-QkYEAQYASABEgITlfD_BwE',
+                    'https://www.adidas.com/us/nmd_r2-shoes/BY3014.html?cm_mmc=AdieSEM_Feeds-_-GoogleProductAds-_-NA-_-BY3014&cm_mmca1=US&cm_mmca2=NA&kpid=BY3014&gclid=EAIaIQobChMI9vTh2KGI2wIV01mGCh0X-QkYEAQYAyABEgIWwPD_BwE&gclsrc=aw.ds&dclid=CNenhN-hiNsCFcm8swodBUYPEQ',
+                    'https://www.adidas.com/us/nmd_r2-shoes/BY3014.html?cm_mmc=AdieSEM_Feeds-_-GoogleProductAds-_-NA-_-BY3014&cm_mmca1=US&cm_mmca2=NA&kpid=BY3014&gclid=EAIaIQobChMI9vTh2KGI2wIV01mGCh0X-QkYEAQYAyABEgIWwPD_BwE&gclsrc=aw.ds&dclid=CNenhN-hiNsCFcm8swodBUYPEQ',
+                    'https://www.allbirds.com/products/mens-wool-runners?variant=22238492551&utm_source=google&utm_medium=cpc&utm_campaign=Shopping+%2F%2F+US+%2F%2F+Non-Brand+Desktop+%28%29&utm_content=222861857964_46805152276&utm_term=_pla-375613546025&gclid=EAIaIQobChMI9vTh2KGI2wIV01mGCh0X-QkYEAQYASABEgITlfD_BwE']
+
+headers = {'User-Agent': ua.firefox}
+for url in urls_to_browse:
+    try:
+        response = requests.get(url, headers = headers)
+        print "Site Visitied:", response.url
+    except:
+        print "Could not visit site"
 
 # The list of sites that we wish to crawl
 NUM_BROWSERS = 1
-sites = ['https://www.online2pdf.com']
+sites = ['https://www.yahoo.com']
 
 # Loads the manager preference and 3 copies of the default browser dictionaries
 manager_params, browser_params = TaskManager.load_default_params(NUM_BROWSERS)
