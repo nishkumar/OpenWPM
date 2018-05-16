@@ -16,15 +16,11 @@ ipython==6.4.0
 Pillow==5.1.0
 beautifulsoup4==4.6.0
 netlib==0.17
-dill
 IPython>=5.0,<6.0; python_version < '3.0'
 IPython>=5.0; python_version >= '3.0'
 mini-amf
 mmh3
 multiprocess
-plyvel
-psutil
-publicsuffix
 pyasn1
 PyOPenSSL
 pytest
@@ -33,6 +29,4 @@ pyvirtualdisplay
 setuptools
 six
 tabulate
-tblib
 tld
-pillow
