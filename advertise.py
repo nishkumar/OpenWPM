@@ -5,11 +5,13 @@ import requests
 from fake_useragent import UserAgent
 
 ua = UserAgent()
-urls_to_browse = ['https://www.allbirds.com/products/mens-wool-runners?variant=22238492551&utm_source=google&utm_medium=cpc&utm_campaign=Shopping+%2F%2F+US+%2F%2F+Non-Brand+Desktop+%28%29&utm_content=222861857964_46805152276&utm_term=_pla-375613546025&gclid=EAIaIQobChMI9vTh2KGI2wIV01mGCh0X-QkYEAQYASABEgITlfD_BwE',
-                    'https://www.adidas.com/us/nmd_r2-shoes/BY3014.html?cm_mmc=AdieSEM_Feeds-_-GoogleProductAds-_-NA-_-BY3014&cm_mmca1=US&cm_mmca2=NA&kpid=BY3014&gclid=EAIaIQobChMI9vTh2KGI2wIV01mGCh0X-QkYEAQYAyABEgIWwPD_BwE&gclsrc=aw.ds&dclid=CNenhN-hiNsCFcm8swodBUYPEQ',
-                    'https://www.adidas.com/us/nmd_r2-shoes/BY3014.html?cm_mmc=AdieSEM_Feeds-_-GoogleProductAds-_-NA-_-BY3014&cm_mmca1=US&cm_mmca2=NA&kpid=BY3014&gclid=EAIaIQobChMI9vTh2KGI2wIV01mGCh0X-QkYEAQYAyABEgIWwPD_BwE&gclsrc=aw.ds&dclid=CNenhN-hiNsCFcm8swodBUYPEQ',
-                    'https://www.allbirds.com/products/mens-wool-runners?variant=22238492551&utm_source=google&utm_medium=cpc&utm_campaign=Shopping+%2F%2F+US+%2F%2F+Non-Brand+Desktop+%28%29&utm_content=222861857964_46805152276&utm_term=_pla-375613546025&gclid=EAIaIQobChMI9vTh2KGI2wIV01mGCh0X-QkYEAQYASABEgITlfD_BwE']
+urls_to_browse = ["https://www.google.com/search?q=women%27s+winter+boots",
+    "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=womens+winter+boots",
+    "https://www.zappos.com/womens-winter-boots",
+    "https://www.amazon.com/Timberland-Womens-Kenniston-Winter-Medium/dp/B01MT7WTDX/",
+    "https://www.ebay.com/itm/Timberland-Womens-14-Inch-Premium-Side-Zip-Lace-Waterproof-Black-Boots-8632A/162719687948"]
 
+#Visit URLs before checking sites for ads
 headers = {'User-Agent': ua.firefox}
 for url in urls_to_browse:
     try:
