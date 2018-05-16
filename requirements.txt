@@ -21,6 +21,5 @@ mmh3
 pyasn1
 PyOPenSSL
 python-dateutil
-pyvirtualdisplay
 setuptools
 tld
