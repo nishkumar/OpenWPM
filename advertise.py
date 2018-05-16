@@ -11,16 +11,16 @@ urls_to_browse = ["https://www.google.com/search?q=women%27s+winter+boots",
     "https://www.amazon.com/Timberland-Womens-Kenniston-Winter-Medium/dp/B01MT7WTDX/",
     "https://www.ebay.com/itm/Timberland-Womens-14-Inch-Premium-Side-Zip-Lace-Waterproof-Black-Boots-8632A/162719687948"]
 
-#Visit URLs before checking sites for ads
-# headers = {'User-Agent': ua.firefox}
-# for url in urls_to_browse:
-#     try:
-#         response = requests.get(url, headers = headers)
-#         print "Site Visitied:", response.url
-#     except:
-#         print "Could not visit site"
+# Visit URLs before checking sites for ads
+headers = {'User-Agent': ua.firefox}
+for url in urls_to_browse:
+    try:
+        response = requests.get(url, headers = headers)
+        print "Site Visitied:", response.url
+    except:
+        print "Could not visit site"
 
-# The list of sites that we wish to crawl
+The list of sites that we wish to crawl
 NUM_BROWSERS = 1
 sites = [   "http://www.dictionary.com/",
             "https://www.yahoo.com/",
@@ -28,7 +28,7 @@ sites = [   "http://www.dictionary.com/",
             "https://www.reddit.com/",
             "https://www.recode.net/"]
 
-sites = urls_to_browse + sites
+# sites = urls_to_browse + sites
 
 # Loads the manager preference and 3 copies of the default browser dictionaries
 manager_params, browser_params = TaskManager.load_default_params(NUM_BROWSERS)
