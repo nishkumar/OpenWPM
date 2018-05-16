@@ -20,7 +20,7 @@ for url in urls_to_browse:
     except:
         print "Could not visit site"
 
-The list of sites that we wish to crawl
+# The list of sites that we wish to crawl
 NUM_BROWSERS = 1
 sites = [   "http://www.dictionary.com/",
             "https://www.yahoo.com/",
