@@ -17,15 +17,11 @@ beautifulsoup4==4.6.0
 netlib==0.17
 IPython>=5.0,<6.0; python_version < '3.0'
 IPython>=5.0; python_version >= '3.0'
-mini-amf
 mmh3
 multiprocess
 pyasn1
 PyOPenSSL
-pytest
 python-dateutil
 pyvirtualdisplay
 setuptools
-six
-tabulate
 tld
