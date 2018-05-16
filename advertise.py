@@ -12,21 +12,21 @@ urls_to_browse = ["https://www.google.com/search?q=women%27s+winter+boots",
     "https://www.ebay.com/itm/Timberland-Womens-14-Inch-Premium-Side-Zip-Lace-Waterproof-Black-Boots-8632A/162719687948"]
 
 #Visit URLs before checking sites for ads
-headers = {'User-Agent': ua.firefox}
-for url in urls_to_browse:
-    try:
-        response = requests.get(url, headers = headers)
-        print "Site Visitied:", response.url
-    except:
-        print "Could not visit site"
+# headers = {'User-Agent': ua.firefox}
+# for url in urls_to_browse:
+#     try:
+#         response = requests.get(url, headers = headers)
+#         print "Site Visitied:", response.url
+#     except:
+#         print "Could not visit site"
 
 # The list of sites that we wish to crawl
 NUM_BROWSERS = 1
-sites = [   "http://www.dictionary.com/",
+sites = urls_to_browse.extend([   "http://www.dictionary.com/",
             "https://www.yahoo.com/",
             "http://www.rediff.com/",
             "https://www.reddit.com/",
-            "https://www.recode.net/"]
+            "https://www.recode.net/"])
 
 # Loads the manager preference and 3 copies of the default browser dictionaries
 manager_params, browser_params = TaskManager.load_default_params(NUM_BROWSERS)
@@ -39,10 +39,13 @@ for i in range(NUM_BROWSERS):
     browser_params[i]['disable_flash'] = False
     #Save all content from Responses
     browser_params[i]['save_all_content'] = True
+    #Activating DO NOT TRACK
+    browser_params[i]['donottrack'] = True
+
 browser_params[0]['headless'] = True  # Launch only browser 0 headless
 
 # Update TaskManager configuration (use this for crawl-wide settings)
-manager_params['data_directory'] = '~/Desktop/OpenWPM'
+manager_params['data_directory'] = '~/Desktop/OpenWPM/'
 manager_params['log_directory'] = '~/Desktop/'
 
 # Instantiates the measurement platform
