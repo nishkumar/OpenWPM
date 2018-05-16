@@ -22,11 +22,13 @@ urls_to_browse = ["https://www.google.com/search?q=women%27s+winter+boots",
 
 # The list of sites that we wish to crawl
 NUM_BROWSERS = 1
-sites = urls_to_browse.extend([   "http://www.dictionary.com/",
+sites = [   "http://www.dictionary.com/",
             "https://www.yahoo.com/",
             "http://www.rediff.com/",
             "https://www.reddit.com/",
-            "https://www.recode.net/"])
+            "https://www.recode.net/"]
+
+sites = urls_to_browse + sites
 
 # Loads the manager preference and 3 copies of the default browser dictionaries
 manager_params, browser_params = TaskManager.load_default_params(NUM_BROWSERS)
