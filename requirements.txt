@@ -16,7 +16,6 @@ ipython==6.4.0
 Pillow==5.1.0
 beautifulsoup4==4.6.0
 netlib==0.17
-beautifulsoup4
 dill
 IPython>=5.0,<6.0; python_version < '3.0'
 IPython>=5.0; python_version >= '3.0'
