@@ -12,7 +12,6 @@ requests==2.18.4
 psutil==5.4.5
 tabulate==0.8.2
 pytest==3.5.0
-ipython==6.4.0
 Pillow==5.1.0
 beautifulsoup4==4.6.0
 netlib==0.17
