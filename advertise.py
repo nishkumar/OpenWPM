@@ -22,7 +22,11 @@ for url in urls_to_browse:
 
 # The list of sites that we wish to crawl
 NUM_BROWSERS = 1
-sites = ['https://www.yahoo.com']
+sites = [   "http://www.dictionary.com/",
+            "https://www.yahoo.com/",
+            "http://www.rediff.com/",
+            "https://www.reddit.com/",
+            "https://www.recode.net/"]
 
 # Loads the manager preference and 3 copies of the default browser dictionaries
 manager_params, browser_params = TaskManager.load_default_params(NUM_BROWSERS)
